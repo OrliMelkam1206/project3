@@ -45,6 +45,7 @@ let exist=true;
             exist=false;
         }
          else {
+            if (users != null)
             for (let i = 0; i < users.length; i++) {
                 if (users[i].username=== userDataObj.username) {
                     alert( "שם המשתמש תפוס ") ;
