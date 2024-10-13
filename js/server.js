@@ -63,7 +63,7 @@ let exist=true;
     
     }
 
-    function postContact(contactDataObj,name){
+function postContact(contactDataObj,name){
     //פעולה שמקבלת איש קשר ומוסיפה אותו למערך אנשי הקשר
     let contacts = JSON.parse(localStorage.getItem("cotacts"))
     if ( contacts === null) {
@@ -77,7 +77,9 @@ let exist=true;
     let users = JSON.parse(localStorage.getItem("users"))
     for(let i=0; i<users.length; i++){
       if(users[i].username===name){
-        users[i].arrayContact.push(contactDataObj)
+        users[i].arrayContact.push(contactDataObj);
+        console.log(users[i]);
+        localStorage.setItem("users", JSON.stringify(users));
       }
     }
-    }
+}

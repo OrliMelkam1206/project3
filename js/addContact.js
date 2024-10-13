@@ -1,4 +1,4 @@
-const username = JSON.parse(localStorage.getItem("currentUser"));
+let username = JSON.parse(localStorage.getItem("currentUser"));
 document.getElementsByClassName("userName")[0].textContent += username.username;
 
 function addNewContact(event){
