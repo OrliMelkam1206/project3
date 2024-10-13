@@ -8,7 +8,4 @@ function onRegister(event) {
     let userDataObj = { username, password, phone, email, arrayContact }
     
     postUsers(userDataObj)
-   
-
-
 }

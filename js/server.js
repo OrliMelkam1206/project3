@@ -6,7 +6,7 @@ function  getUserById(id){
               return array[i];
         }
    }
-   function  getContactById(id){
+function  getContactById(id){
 //פעולה שמחזירה מערך של אנשי קשר לפי ID
     let array=JSON.parse(localStorage.getItem("users"));
     for(let i=0; i<array.length; i++){
@@ -62,7 +62,7 @@ let exist=true;
                 
                 localStorage.setItem("users", JSON.stringify([...users, userDataObj]))
             }
-            signinPage()
+            moveToContacts()
             alert("ההרשמה בוצעה בהצלחה ");
         }
     
