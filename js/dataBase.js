@@ -88,16 +88,17 @@ function postContact(contactDataObj,name){
               counter++
               break
             }
-            if(counter!=0){
+            if(counter===0){
               users[i].arrayContact.push(contactDataObj);
+              localStorage.setItem("currentUser", JSON.stringify(users[i]))
               break
 
             } 
             else{
               alert("המספר טלפון הזה שמור כבר באנשי הקשר שלך!")
               break;
-          ``}
-        ``}
+            }
+          }
         }
         localStorage.setItem("users", JSON.stringify(users))
 
