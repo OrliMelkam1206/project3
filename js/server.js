@@ -65,8 +65,8 @@ let exist=true;
 
     function postContact(contactDataObj,name){
     //פעולה שמקבלת איש קשר ובן אדם ומוסיפה אותו למערך אנשי הקשר ולמערך אנשי הקשר של אותו אדם
-    let contacts = JSON.parse(localStorage.getItem("cotacts"))
-    if ( contacts === null) {
+    let contacts = JSON.parse(localStorage.getItem("contacts"))
+    if (!contacts) {
         localStorage.setItem("contacts", JSON.stringify([contactDataObj]))
     }
     else {
@@ -81,23 +81,24 @@ let exist=true;
           break
         }
         else { 
-          for(let j=0; j<users[i].arrayContact.length;j++){
-          if(users[i].arrayContact[j].phone===contactDataObj.phone)
-           {
-            counter++
-            break
-           }
-           if(counter!=0){
-            users[i].arrayContact.push(contactDataObj);
-            break
-          } 
+            for(let j=0; j<users[i].arrayContact.length;j++){
+                if(users[i].arrayContact[j].phone===contactDataObj.phone)
+                {
+                    counter++
+                    break
+                }
+                if(counter!=0){
+                    users[i].arrayContact.push(contactDataObj);
+                    break
+                } 
+            }      
         }
-        
-      }
-    }
+        }
+        localStorage.setItem("users", JSON.stringify(users))
+
     }
  
     }
     function setCurrentUser(currentUser){
-      localStorage.setItem("currentUser", JSON.stringify( currentUser))
+      localStorage.setItem("currentUser", JSON.stringify(currentUser))
     }
