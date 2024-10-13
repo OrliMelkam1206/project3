@@ -5,7 +5,7 @@ function onRegister(event) {
     let password = document.getElementById("password").value
     let email = document.getElementById("email").value
     let arrayContact=[];
-    let userDataObj = { username, password ,id , phone, email, arrayContact }
+    let userDataObj = { username, password , phone, email, arrayContact }
     
     postUsers(userDataObj)
 }
