@@ -5,7 +5,7 @@ function onSubmit(event){
     
     let password=document.getElementById("password").value;
    
-    let users = JSON.parse(localStorage.getItem("users"));
+    let users = getUsers();
    
     let currentUser=users.find(user => {
     
