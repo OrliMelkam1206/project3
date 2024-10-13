@@ -81,17 +81,21 @@ let exist=true;
           break
         }
         else { 
-            for(let j=0; j<users[i].arrayContact.length;j++){
-                if(users[i].arrayContact[j].phone===contactDataObj.phone)
-                {
-                    counter++
-                    break
-                }
-                if(counter!=0){
-                    users[i].arrayContact.push(contactDataObj);
-                    break
-                } 
-            }      
+          for(let j=0; j<users[i].arrayContact.length;j++){
+          if(users[i].arrayContact[j].phone===contactDataObj.phone)
+           {
+            counter++
+            break
+           }
+           if(counter!=0){
+            users[i].arrayContact.push(contactDataObj);
+            break
+
+          } 
+          else{
+            alert("המספר טלפון הזה שמור כבר באנשי הקשר שלך!")
+            break;
+        }
         }
         }
         localStorage.setItem("users", JSON.stringify(users))
