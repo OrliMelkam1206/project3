@@ -9,13 +9,7 @@ function onRegister(event) {
     
     postUsers(userDataObj)
    
-    function backToLogin() {    
-        document.getElementById("container").innerHTML = "";
-        var signinContent = document.getElementsByTagName("template")[0].content.cloneNode(true);
-        var container = document.getElementById("container");
-        container.appendChild(signinContent);
 
-    }
 
 
 }
