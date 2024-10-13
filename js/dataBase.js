@@ -80,8 +80,10 @@ function postContact(contactDataObj,name){
     for(let i=0; i<users.length; i++){
       if(users[i].username===name){
         console.log('users[i].username: ', users[i].username);
-        if(users[i].arrayContact==null){
+        if(users[i].arrayContact.length === 0){
           users[i].arrayContact.push(contactDataObj)
+          setCurrentUser(users[i])
+
           break
         }
         else { 
@@ -91,8 +93,9 @@ function postContact(contactDataObj,name){
               counter++
               break
             }
-            if(counter!=0){
+            if(counter===0){
               users[i].arrayContact.push(contactDataObj);
+              setCurrentUser(users[i])
               break
 
             } 
