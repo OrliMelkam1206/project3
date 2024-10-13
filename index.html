@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/header.css">
+
 
 </head>
 <body onload="signinPage()">
@@ -13,32 +15,15 @@
     <div id="container" style="height: 1000px;"></div>
 <script src ='./js/server.js'></script>
 
-    <script>
-        function signinPage() {    
-            document.getElementById("container").innerHTML = "";
-            var signinContent = document.getElementsByTagName("template")[0].content.cloneNode(true);
-            var container = document.getElementById("container");
-            container.appendChild(signinContent);
-
-        }
-
-        function moveToSignup() {
-            document.getElementById("container").innerHTML = "";
-            var signupContent = document.getElementsByTagName("template")[1].content.cloneNode(true);
-            var container = document.getElementById("container");
-            container.appendChild(signupContent);
-        }
-    </script>
+    
    
-<template>
+    <template>
         <div id="loginPage">
 
         <header>
-            <h1> Games by Tamar and Yakira</h1>
-           
+            <h1> Games by Tamar and Orli</h1>         
         </header>
-        <div>
-            
+        <div>          
             <form>
                 <h1> log in</h1>
                 <div>
@@ -60,9 +45,9 @@
             </form>
         </div>
     </div>
-   <script src="./js/logIn.js"></script>
+   <script src="js/logIn.js"></script>
     
-</template>
+    </template>
     
     <template>
         <div id="signupPage">
@@ -91,30 +76,111 @@
                     <div>
                         <button id="submit"  onclick="onRegister(event)">submit</button>
                     </div>
+                    <p id="notExist"></p>
                     <div><button onclick="signinPage()">you already have an account? <br>
                         log in!</button></div>
                         
-                    </form>
-                </div>
+                </form>
+            </div>
         </div>
-        <script src="./js/signUp.js"></script>
+        <script src="js/signUp.js"></script>
     </template>
 
 
-<template>
-    <div id="gamePage">
-      <div id="header">
-        <p id="demo">0</p>
-        <button id="logout" onclick="signinPage()">logOut</button>
-    </div>
-  
-    <div>  <button id="button" type="button" onclick="myFunction()">Count!</button></div>
-   
-</div>
- <script src="../js/game.js"></script>
-</template>
+    <template>
+        <header> 
+            <div class="countiner1">
+                <a class="login" >
+                    <img class="loginimg" src="./pic/login.png"/>
+                    <div class="userName">היי, </div>
+                </a>
+                <h1 id="name"> contacts </br> </h1>
+                <a onclick="moveToAddContact()" href="#" >
+                    <img id="addContact" src="./pic/scoreTable2.png" alt="logo">
+                </a>
+            </div>
+        </header>
+        <main id="main">
 
+        </main>
+        <script src="js/contacts.js"></script>
+    </template>
 
-    
+    <template>
+        <header> 
+            <div class="countiner1">
+                <a class="login" >
+                    <img class="loginimg" src="./pic/login.png"/>
+                    <div class="userName">היי, </div>
+                </a>
+                <h1 id="nameApp"> contacts </br> </h1>
+                <a onclick="moveToAddContact()" href="#" >
+                    <img id="addContact" src="./pic/scoreTable2.png" alt="logo">
+                </a>
+            </div>
+        </header>
+        <main id="main">
+
+        </main>
+        <script src="js/contacts.js"></script>
+    </template>
+    <!-- <template>
+        <header> 
+            <div class="countiner1">
+                <a class="login" >
+                    <img class="loginimg" src="./pic/login.png"/>
+                    <div class="userName">היי, </div>
+                </a>
+                <h1 id="name"> contacts </br> </h1>
+                <a onclick="moveToAddContact()" href="#" >
+                    <img id="addContact" src="./pic/scoreTable2.png" alt="logo">
+                </a>
+            </div>
+        </header>
+        <main id="main">
+            <div id="name-contact"></div>
+            <div id="phone-contact"></div>
+            <div id="address-contact"></div>
+        </main>
+        <script src="js/contacts.js"></script>
+    </template> -->
+    <template>
+        <header> 
+            <div class="countiner1">
+                <a class="login" >
+                    <img class="loginimg" src="./pic/login.png"/>
+                    <div class="userName">היי, </div>
+                </a>
+                <h1 id="nameApp"> contacts </br> </h1>
+                <a onclick="moveToAddContact()" href="#" >
+                    <img id="addContact" src="./pic/scoreTable2.png" alt="logo">
+                </a>
+            </div>
+        </header>
+        <main>
+            <form>
+                <h1>New contact</h1>
+                <div>
+                    <label id="name-label" for="name">name</label>
+                    <input type="text" id="name" placeholder="name"  required>
+                </div>
+                <div>
+                    <label  id="phone-label" for="phone">phone</label>
+                    <input type="tel" id="phone" placeholder="Phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required>
+                </div>
+                <div>
+                    <label id="address-label" for="email">email:</label>
+                    <input type="text" id="address" name="address">
+                    
+                </div>
+                <div>
+                    <button id="submit"  onclick="addNewContact(event)">submit</button>
+                </div>                    
+            </form>
+        </main>
+    </template>
+    <script src="js/spa.js">
+        
+    </script>
 </body>
 </html>
