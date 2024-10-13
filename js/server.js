@@ -90,7 +90,9 @@ let exist=true;
            if(counter!=0){
             users[i].arrayContact.push(contactDataObj);
             break
+
           } 
+          else alert("המספר טלפון הזה שמור כבר באנשי הקשר שלך!")
         }
         
       }
