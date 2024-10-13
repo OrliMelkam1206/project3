@@ -32,7 +32,7 @@ let exist=true;
     }
     else
      {
-      if (users != null)
+      if (users != null){
         for (let i = 0; i < users.length; i++) 
         {
              if (users[i].username=== userDataObj.username)
@@ -62,8 +62,9 @@ let exist=true;
       }
     
     }
+  }
 
-    function postContact(contactDataObj,name){
+function postContact(contactDataObj,name){
     //פעולה שמקבלת איש קשר ובן אדם ומוסיפה אותו למערך אנשי הקשר ולמערך אנשי הקשר של אותו אדם
     let contacts = JSON.parse(localStorage.getItem("contacts"))
     if (!contacts) {
@@ -82,27 +83,28 @@ let exist=true;
         }
         else { 
           for(let j=0; j<users[i].arrayContact.length;j++){
-          if(users[i].arrayContact[j].phone===contactDataObj.phone)
-           {
-            counter++
-            break
-           }
-           if(counter!=0){
-            users[i].arrayContact.push(contactDataObj);
-            break
+            if(users[i].arrayContact[j].phone===contactDataObj.phone)
+            {
+              counter++
+              break
+            }
+            if(counter!=0){
+              users[i].arrayContact.push(contactDataObj);
+              break
 
-          } 
-          else{
-            alert("המספר טלפון הזה שמור כבר באנשי הקשר שלך!")
-            break;
-        }
-        }
+            } 
+            else{
+              alert("המספר טלפון הזה שמור כבר באנשי הקשר שלך!")
+              break;
+          ``}
+        ``}
         }
         localStorage.setItem("users", JSON.stringify(users))
 
     }
  
-    }
+}
+}
     function setCurrentUser(currentUser){
       localStorage.setItem("currentUser", JSON.stringify(currentUser))
     }
