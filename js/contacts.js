@@ -1,7 +1,6 @@
 showContacts();
 function showContacts(){
     let username2 = JSON.parse(localStorage.getItem("currentUser"));
-    console.log(username2)
     document.getElementsByClassName("userName")[0].textContent += username2.username;
     let main2 = document.getElementById("main");
     let contacts = username2.arrayContact;

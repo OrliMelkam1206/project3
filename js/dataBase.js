@@ -59,6 +59,7 @@ let exist=true;
         }
        moveToContacts()
        alert("ההרשמה בוצעה בהצלחה ");
+       setCurrentUser(userDataObj);
       }
     
     }
@@ -75,8 +76,10 @@ function postContact(contactDataObj,name){
     }
     let counter=0;
     let users = JSON.parse(localStorage.getItem("users"))
+    console.log(users)
     for(let i=0; i<users.length; i++){
       if(users[i].username===name){
+        console.log('users[i].username: ', users[i].username);
         if(users[i].arrayContact==null){
           users[i].arrayContact.push(contactDataObj)
           break
@@ -108,4 +111,7 @@ function postContact(contactDataObj,name){
 }
     function setCurrentUser(currentUser){
       localStorage.setItem("currentUser", JSON.stringify(currentUser))
+    }
+    function getCurrentUser(){
+     return JSON.parse(localStorage.getItem("contacts"))
     }
