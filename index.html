@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,79 +11,81 @@
 
 
 </head>
+
 <body onload="signinPage()">
     <script src="js/spa.js">
-        
+
     </script>
 
     <div id="container" style="height: 1000px;"></div>
-<script src ='./js/server.js'></script>
+    <script src='./js/server.js'></script>
 
-    
-   
+
+
     <template>
         <div id="loginPage">
 
-        <header>
-            <h1> Games by Tamar and Orli</h1>         
-        </header>
-        <div>          
-            <form>
-                <h1> log in</h1>
-                <div>
-                    <label id="login-username" for="username">username</label>
-                    <input type="text" id="username" placeholder="username" required>
-                </div>
-                <div>
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="psw"   required>
-                </div>
-                <div>
-                    <button id="submit" onclick=onSubmit(event)>submit</button>
-                    
-                </div>
-                <div>
-                <button onclick="moveToSignup()">don't have an account? <br>
-                    create one!</button>
-                </div>
-            </form>
+            <header>
+                <h1> Games by Tamar and Orli</h1>
+            </header>
+            <div>
+                <form>
+                    <h1> log in</h1>
+                    <div>
+                        <label id="login-username" for="username">username</label>
+                        <input type="text" id="username" placeholder="username" required>
+                    </div>
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="psw" required>
+                    </div>
+                    <div>
+                        <button id="submit" onclick=onSubmit(event)>submit</button>
+
+                    </div>
+                    <div>
+                        <button onclick="moveToSignup()">don't have an account? <br>
+                            create one!</button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
-   <script src="js/logIn.js"></script>
-    
+        <script src="js/logIn.js"></script>
+
     </template>
-    
+
     <template>
         <div id="signupPage">
             <header>
                 <h1> Games by Tamar and Orli</h1>
-               
+
             </header>
             <div>
                 <form>
                     <h1>sign up!</h1>
                     <div>
                         <label id="username-label" for="username">username</label>
-                        <input type="text" id="username" placeholder="username"  required>
+                        <input type="text" id="username" placeholder="username" required>
                     </div>
-                    <div>    <label for="password">Password</label>
-                        <input type="password" id="password" name="psw"  required></div>
+                    <div> <label for="password">Password</label>
+                        <input type="password" id="password" name="psw" required>
+                    </div>
                     <div>
-                        <label  id="phone-label" for="phone">phone</label>
+                        <label id="phone-label" for="phone">phone</label>
                         <input type="tel" id="phone" placeholder="Phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required>
                     </div>
                     <div>
                         <label id="email-label" for="email">email:</label>
                         <input type="email" id="email" name="email">
-                        
+
                     </div>
                     <div>
-                        <button id="submit"  onclick="onRegister(event)">submit</button>
+                        <button id="submit" onclick="onRegister(event)">submit</button>
                     </div>
                     <p id="notExist"></p>
                     <div><button onclick="signinPage()">you already have an account? <br>
-                        log in!</button></div>
-                        
+                            log in!</button></div>
+
                 </form>
             </div>
         </div>
@@ -90,16 +93,17 @@
     </template>
 
 
+
     <template>
-        <header> 
+        <header class="contacts-header">
             <div class="countiner1">
-                <a class="login" >
-                    <img class="loginimg" src="./pic/login.png"/>
+                <a class="login">
+                    <img class="loginimg" src="./pic/login.png" />
                     <div class="userName">היי, </div>
                 </a>
-                <h1 id="name"> contacts </br> </h1>
-                <a onclick="moveToAddContact()" href="#" >
-                    <img id="addContact" src="./pic/scoreTable2.png" alt="logo">
+                <h1 id="nameApp"> contacts </br> </h1>
+                <a onclick="moveToAddContact()" href="#">
+                    <img id="addContact" src="./img/plus.png" alt="plus">
                 </a>
             </div>
         </header>
@@ -110,53 +114,15 @@
     </template>
 
     <template>
-        <header class="contacts-header"> 
+        <header class="contacts-header">
             <div class="countiner1">
-                <a class="login" >
-                    <img class="loginimg" src="./pic/login.png"/>
+                <a class="login">
+                    <img class="loginimg" src="./pic/login.png" />
                     <div class="userName">היי, </div>
                 </a>
                 <h1 id="nameApp"> contacts </br> </h1>
-                <a onclick="moveToAddContact()" href="#" >
-                    <img id="addContact" src="./pic/scoreTable2.png" alt="logo">
-                </a>
-            </div>
-        </header>
-        <main id="main">
-
-        </main>
-        <script src="js/contacts.js"></script>
-    </template>
-    <!-- <template>
-        <header> 
-            <div class="countiner1">
-                <a class="login" >
-                    <img class="loginimg" src="./pic/login.png"/>
-                    <div class="userName">היי, </div>
-                </a>
-                <h1 id="name"> contacts </br> </h1>
-                <a onclick="moveToAddContact()" href="#" >
-                    <img id="addContact" src="./pic/scoreTable2.png" alt="logo">
-                </a>
-            </div>
-        </header>
-        <main id="main">
-            <div id="name-contact"></div>
-            <div id="phone-contact"></div>
-            <div id="address-contact"></div>
-        </main>
-        <script src="js/contacts.js"></script>
-    </template> -->
-    <template>
-        <header class="contacts-header"> 
-            <div class="countiner1">
-                <a class="login" >
-                    <img class="loginimg" src="./pic/login.png"/>
-                    <div class="userName">היי, </div>
-                </a>
-                <h1 id="nameApp"> contacts </br> </h1>
-                <a onclick="moveToAddContact()" href="#" >
-                    <img id="addContact" src="./pic/scoreTable2.png" alt="logo">
+                <a onclick="moveToAddContact()" href="#">
+                    <img id="addContact" src="./img/plus.png" alt="logo">
                 </a>
             </div>
         </header>
@@ -165,23 +131,24 @@
                 <h1>New contact</h1>
                 <div>
                     <label id="name-label" for="name">name</label>
-                    <input type="text" id="name" placeholder="name"  required>
+                    <input type="text" id="name" placeholder="name" required>
                 </div>
                 <div>
-                    <label  id="phone-label" for="phone">phone</label>
+                    <label id="phone-label" for="phone">phone</label>
                     <input type="tel" id="phone" placeholder="Phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required>
                 </div>
                 <div>
                     <label id="address-label" for="email">email:</label>
                     <input type="text" id="address" name="address">
-                    
+
                 </div>
                 <div>
-                    <button id="submit"  onclick="addNewContact(event)">submit</button>
-                </div>                    
+                    <button id="submit" onclick="addNewContact(event)">submit</button>
+                </div>
             </form>
         </main>
     </template>
-    
+
 </body>
+
 </html>

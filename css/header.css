@@ -25,14 +25,7 @@
   transition: 1s;
 }
 
-/* #logo{
-    padding: 0%;
-    top: 0px;
-    position: relative;
-    width: 100px;
-    height: 80px;
-    margin-top: 10px;
-} */
+
 
 .contacts-header{
     background-color: #c9377b;
@@ -63,3 +56,7 @@ body{
 body{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 } 
+
+#addContact{
+    width: 100px;
+}
