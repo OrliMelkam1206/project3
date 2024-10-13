@@ -2,7 +2,7 @@ function signinPage() {
     document.getElementById("container").innerHTML = "";
     var loginContent = document.getElementsByTagName("template")[0].content.cloneNode(true);
     var container = document.getElementById("container");
-    container.appendChild(signinContent);
+    container.appendChild(loginContent);
 
 }
 
