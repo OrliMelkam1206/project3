@@ -63,23 +63,41 @@ let exist=true;
     
     }
 
-function postContact(contactDataObj,name){
-    //פעולה שמקבלת איש קשר ומוסיפה אותו למערך אנשי הקשר
+    function postContact(contactDataObj,name){
+    //פעולה שמקבלת איש קשר ובן אדם ומוסיפה אותו למערך אנשי הקשר ולמערך אנשי הקשר של אותו אדם
     let contacts = JSON.parse(localStorage.getItem("cotacts"))
     if ( contacts === null) {
         localStorage.setItem("contacts", JSON.stringify([contactDataObj]))
     }
     else {
-        
-        localStorage.setItem("contacts", JSON.stringify([...contacts, contactDataObj]))
+     localStorage.setItem("contacts", JSON.stringify([...contacts, contactDataObj]))
     }
-    
+    let counter=0;
     let users = JSON.parse(localStorage.getItem("users"))
     for(let i=0; i<users.length; i++){
       if(users[i].username===name){
-        users[i].arrayContact.push(contactDataObj);
-        console.log(users[i]);
-        localStorage.setItem("users", JSON.stringify(users));
+        if(users[i].arrayContact==null){
+          users[i].arrayContact.push(contactDataObj)
+          break
+        }
+        else { 
+          for(let j=0; j<users[i].arrayContact.length;j++){
+          if(users[i].arrayContact[j].phone===contactDataObj.phone)
+           {
+            counter++
+            break
+           }
+           if(counter!=0){
+            users[i].arrayContact.push(contactDataObj);
+            break
+          } 
+        }
+        
       }
     }
-}
+    }
+ 
+    }
+    function setCurrentUser(currentUser){
+      localStorage.setItem("currentUser", JSON.stringify( currentUser))
+    }

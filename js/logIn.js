@@ -16,6 +16,7 @@ function onSubmit(event){
     else{
         alert("Invalid username or password");
     } 
-    localStorage.setItem("currentUser", JSON.stringify( currentUser))
+    setCurrentUser(currentUser)
+    
   
 }
