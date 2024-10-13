@@ -13,9 +13,24 @@ function moveToSignup() {
     container.appendChild(signupContent);
 }
 
-function moveToSpecificContact(){
+function moveToContacts(){
     document.getElementById("container").innerHTML = "";
     var contactContent = document.getElementsByTagName("template")[2].content.cloneNode(true);
     var container = document.getElementById("container");
-    container.appendChild(signupContent);
+    container.appendChild(contactContent);
 }
+
+// function moveToSpecificContact(){
+//     document.getElementById("container").innerHTML = "";
+//     var contactContent = document.getElementsByTagName("template")[3].content.cloneNode(true);
+//     var container = document.getElementById("container");
+//     container.appendChild(contactContent);
+// }
+
+function moveToAddContact(){
+    document.getElementById("container").innerHTML = "";
+    var newContactContent = document.getElementsByTagName("template")[3].content.cloneNode(true);
+    var container = document.getElementById("container");
+    container.appendChild(newContactContent);
+}
+
