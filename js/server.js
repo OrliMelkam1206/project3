@@ -24,12 +24,10 @@ function myServer(obj){
         case 'POST':
             if(checkUrl(obj.url)){
                 if(words[2] === 'users'){
-                    postUsers(obj.data);
-                    return 200;
+                    return postUsers(obj.data);
                 }
                 else{
-                    postContact(obj.data);
-                    return 200;
+                    return postContact(obj.data);
                 }
             }
             else{
@@ -40,7 +38,7 @@ function myServer(obj){
 
 function checkUrl(url){
     let words = url.split('/').filter(word => word);
-    if(words.length > 2 && words.length < 5){
+    if(words.length > 2 && words.length < 6){
         if(words[0] === 'tamarOrli' && words[1] === 'api'){
             switch(words[2]){
                 case 'users':

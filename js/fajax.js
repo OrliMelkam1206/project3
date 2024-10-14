@@ -11,12 +11,13 @@ class FAJAX {
         this.url = url;
     }
     send(data = null){
+        this.data = data;
         this.responseText = network({method: this.method, url: this.url, data: this.data});
-        if(this.responseText !== 404){
-            this.status = 200;
+        if(typeof this.responseText === "number"){
+            this.status = this.responseText;
         }
         else{
-            this.status = 404;
+            this.status = 200;
         }
         setTimeout(this.onload(), 1000)
     }

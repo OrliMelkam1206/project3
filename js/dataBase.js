@@ -26,10 +26,8 @@ function getContacts(){
 function postUsers(userDataObj){
 //פעולה שמקבלת אובייקט ומוסיפה אותו למערך המשתמשים
 let users = JSON.parse(localStorage.getItem("users"))
-let exist=true;
    if (userDataObj.username === "" || userDataObj.password === "") {
-           alert("הכנס שם משתמש או סיסמא") ;
-            exist=false;
+           return 300;
     }
     else
      {
@@ -38,18 +36,11 @@ let exist=true;
         {
              if (users[i].username=== userDataObj.username)
               {
-               alert( "שם המשתמש תפוס ") ;
-               exist=false;
-               break;
-              }
-             else 
-              { 
-               exist = true 
+               return 350;
               }
          }
      }
-    if (exist) 
-     {
+  
       userDataObj.id = addIdToUser();
       if (users === null) 
         {
@@ -61,12 +52,9 @@ let exist=true;
           
          localStorage.setItem("users", JSON.stringify([...users, userDataObj]))
         }
-       moveToContacts()
-       alert("ההרשמה בוצעה בהצלחה ");
        setCurrentUser(userDataObj);
+       return 200;
       }
-    
-    }
   }
 
 function postContact(contactDataObj,id){
