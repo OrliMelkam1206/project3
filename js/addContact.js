@@ -1,8 +1,9 @@
+let username = {};
 let x2 = new FAJAX();
 x2.open('POST', 'tamarOrli/api/contacts');
 x2.onload = function(){
     if(x2.status === 200){
-        let username = x2.responseText;
+        username = x2.responseText;
         document.getElementsByClassName("userName")[0].textContent += username.username;
     }
     else{
