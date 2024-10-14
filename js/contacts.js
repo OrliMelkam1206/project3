@@ -10,6 +10,8 @@ function showContacts(){
         contact.style.backgroundColor = "white";
         contact.style.display="flex";
         contact.style.justifyContent= "space-around";
+        contact.style.padding="25px"
+        contact.style.fontSize="30px"
 
         let name = document.createElement("div");
         name.textContent = contacts[i].name;

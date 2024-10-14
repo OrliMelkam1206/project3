@@ -121,37 +121,10 @@ header{
     }
 }
 
-
-
-#gamePage {
-#header{
-display: flex;
-flex-direction: row;
-justify-content: space-around;
-
-}
-#demo{
-color:rgb(226, 84, 84);
-width:60%;
-font-size:70px;
-text-align: center;
-font-family: "Aclonica", sans-serif;
-justify-content: center;
-padding-left: 280px;
-}
-#logout{
-height:30px;
-font-size: 40px;
-}
-div button{
-justify-content: center;
-}
-#button {
+#contact{
+#orli{
     display: flex;
-    flex-direction:column ;
-    font-size: 5rem;
-    width: 500px;
-    height: 200px;
-    justify-content: center;
-} 
-}
+    justify-content: space-around;
+    font-size: 40px;
+    padding: 30px;
+}}
