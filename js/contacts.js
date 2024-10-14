@@ -66,3 +66,17 @@ function deleteButton(contact, id){
     xhttp.send([contact.id, id]);
 }
 
+function logOut(){
+    let xhttp= new FAJAX();
+    xhttp.open('PUT', 'tamarOrli/api/currentUser');
+    xhttp.onload = function(){
+        if(xhttp.status===404)
+        alert('eror')
+        else{
+            alert("בוצעה התנתקות");
+            signinPage();
+        }
+    }
+    xhttp.send(null);
+    
+}

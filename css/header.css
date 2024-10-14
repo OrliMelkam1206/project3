@@ -60,3 +60,16 @@ body{
 #addContact{
     width: 100px;
 }
+#logoutBottem{
+    background-color: #c9377b;
+    border: 0px solid black;
+    color: whitesmoke;
+    font-size: large;
+    text-decoration: underline;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#logoutBottem:hover{
+    text-shadow: 1px 1px 5px black, 0 0 25px white, 0 0 10px whitesmoke;
+    box-shadow: 1px 1px 5px black, 0 0 25px white, 0 0 10px whitesmoke;
+}
