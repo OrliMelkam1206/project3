@@ -19,7 +19,6 @@ function onSubmit(event){
         else{
             alert("Invalid username or password");
         } 
-        setCurrentUser(currentUser) 
         let xhttp= new FAJAX();
         xhttp.open('PUT', 'tamarOrli/api/currentUser');
         x.onload = function(){
