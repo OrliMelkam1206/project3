@@ -68,12 +68,7 @@ let exist=true;
 function postContact(contactDataObj,name){
     //פעולה שמקבלת איש קשר ובן אדם ומוסיפה אותו למערך אנשי הקשר ולמערך אנשי הקשר של אותו אדם
     let contacts = JSON.parse(localStorage.getItem("contacts"))
-    if (!contacts) {
-        localStorage.setItem("contacts", JSON.stringify([contactDataObj]))
-    }
-    else {
-     localStorage.setItem("contacts", JSON.stringify([...contacts, contactDataObj]))
-    }
+
     let counter=0;
     let users = JSON.parse(localStorage.getItem("users"))
     console.log(users)
@@ -83,6 +78,7 @@ function postContact(contactDataObj,name){
         if(users[i].arrayContact.length === 0){
           users[i].arrayContact.push(contactDataObj)
           setCurrentUser(users[i])
+          localStorage.setItem("users", JSON.stringify(users))
 
           break
         }
@@ -93,16 +89,23 @@ function postContact(contactDataObj,name){
               counter++
               break
             }
-            if(counter===0){
-              users[i].arrayContact.push(contactDataObj);
-              setCurrentUser(users[i])
-              break
-
-            } 
-            else{
-              alert("המספר טלפון הזה שמור כבר באנשי הקשר שלך!")
-              break;
+            
+          }
+          if(counter===0){
+            users[i].arrayContact.push(contactDataObj);
+            setCurrentUser(users[i])
+            if (!contacts) {
+              localStorage.setItem("contacts", JSON.stringify([contactDataObj]))
             }
+            else {
+            localStorage.setItem("contacts", JSON.stringify([...contacts, contactDataObj]))
+            }
+            break
+
+          } 
+          else{
+            alert("המספר טלפון הזה שמור כבר באנשי הקשר שלך!")
+            break;
           }
         }
         localStorage.setItem("users", JSON.stringify(users))

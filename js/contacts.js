@@ -8,6 +8,8 @@ function showContacts(){
         let contact = document.createElement("div");
         contact.style.width = "100%";
         contact.style.backgroundColor = "white";
+        contact.style.display="flex";
+        contact.style.justifyContent= "space-around";
 
         let name = document.createElement("div");
         name.textContent = contacts[i].name;
