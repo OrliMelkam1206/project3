@@ -1,5 +1,6 @@
 function myServer(obj){
     let words = obj.url.split('/').filter(word => word);
+
     switch(obj.method){
         case 'GET':
             if(checkUrl(obj.url)){
@@ -46,8 +47,10 @@ function myServer(obj){
             else{
                 return 404;
             }
+            debugger
         case 'DELETE':
             if(checkUrl(obj.url)){
+                debugger
                 if(words[2] === 'contacts' && typeof (words[3] * 1) === 'number'){
                     return deleteContantById(obj.data[0], obj.data[1]);
                 }

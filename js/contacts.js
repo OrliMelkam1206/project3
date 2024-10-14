@@ -1,12 +1,13 @@
-showContacts();
 function showContacts(){
+    let main2 = document.getElementById("contact-container");
+    main2.innerHTML = "";
+
     let xhttp= new FAJAX();
     xhttp.open('GET', 'tamarOrli/api/currentUser');
     xhttp.onload = function(){
       
        if(xhttp.status===200){
         // document.getElementsByClassName("userName")[0].textContent += xhttp.responseText.username;
-        let main2 = document.getElementById("main");
         let contacts = xhttp.responseText.arrayContact;
         for(let i = 0; i < contacts.length; i++){
             let contact = document.createElement("div");
@@ -33,10 +34,11 @@ function showContacts(){
             let deleteContact = document.createElement("button");
             deleteContact.textContent ="DELETE";
             address.style.fontSize = "20px";
-            deleteContact.addEventListener("click",deleteButton(contacts[i], xhttp.responseText.id))
+            deleteContact.addEventListener("click",() => deleteButton(contacts[i], xhttp.responseText.id))
             contact.appendChild(name);
             contact.appendChild(phone);
             contact.appendChild(address);
+            contact.appendChild(deleteContact)
             contact.style.marginTop = "10px"
             main2.appendChild(contact);
         }
@@ -51,11 +53,11 @@ xhttp.send();
 }
 function deleteButton(contact, id){
     let xhttp= new FAJAX();
-    xhttp.open('DELETE', 'tamarOrli/api/contacts');
+    xhttp.open('DELETE', `tamarOrli/api/contacts/${contact.id}`);
     xhttp.onload = function(){
         if(xhttp.status===200){
             alert("המחיקה בוצעה בהצלחה")
-            showContacts()
+        showContacts()
         }
         if(xhttp.status===404){
             alert("EROR")

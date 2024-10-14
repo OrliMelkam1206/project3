@@ -131,7 +131,7 @@ function postContact(contactDataObj,id){
     function addIdToContact(){
       let contacts = getContacts();
       if(contacts !== null){
-        return (contacts[contacts.length-1].id + 1);
+        return (contacts[contacts.length-1]?.id + 1 || 0);
       }
       else{
         return 1;
@@ -141,20 +141,22 @@ function postContact(contactDataObj,id){
     function deleteContantById(idContact,id){
       let array=getContacts();
       let users=getUsers()
-      for(let i=0; i<array.length; i++){
-        if(array[i].id===idContact)
-          array.splice(i,1)
-      }
+        array = Array.from(array).filter((obj) => {
+            return obj.id !== idContact
+        })
+
+  
       for(let j=0; j<users.length; j++){
         if(users[j].id===id){
-          for(let m=0; m<users[j].arrayContact.length; m++){
-            if(users[j].arrayContact.id===idContact)
-              users[j].arrayContact.splice(m,1)
-          }
+           users[j].arrayContact = Array.from(users[j].arrayContact).filter((obj) => {
+            return obj.id !== idContact
+        })
+        localStorage.setItem("currentUser",JSON.stringify(users[j]))
         }
       }
-      localStorage.setItem("contacts",array);
-      localStorage.setItem("users",users);
+     
+      localStorage.setItem("contacts",JSON.stringify(array));
+      localStorage.setItem("users",JSON.stringify(users));
       
 
     }
