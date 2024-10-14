@@ -13,15 +13,10 @@
 </head>
 
 <body onload="signinPage()">
-    <script src="js/spa.js">
-
-    </script>
+    
 
     <div id="container" style="height: 1000px;"></div>
-    <script src='./js/dataBase.js'></script>
-    <script src='./js/server.js'></script>
-
-
+    
 
     <template>
         <div id="loginPage">
@@ -51,8 +46,6 @@
                 </form>
             </div>
         </div>
-        <script src="js/logIn.js"></script>
-
     </template>
 
     <template>
@@ -86,14 +79,10 @@
                     <p id="notExist"></p>
                     <div><button onclick="signinPage()">you already have an account? <br>
                             log in!</button></div>
-
                 </form>
             </div>
         </div>
-        <script src="js/signUp.js"></script>
     </template>
-
-
 
     <template>
         <div id="contact">
@@ -116,7 +105,7 @@
                 <div>כתובת מגורים</div>
             </div>
         </main>
-        <script src="js/contacts.js"></script></div>
+    </div>
     </template>
 
     <template>
@@ -153,9 +142,17 @@
                 </div>
             </form>
         </main>
-        <script src="js/addContact.js"></script>
     </template>
 
+    <script src="js/logIn.js"></script>
+    <script src="js/signUp.js"></script>
+    <script src="js/contacts.js"></script>
+    <script src="js/addContact.js"></script>
+    <script src='./js/dataBase.js'></script>
+    <script src='./js/server.js'></script>
+    <script src="js/spa.js"></script>
+    <script src="js/fajax.js"></script>
+    <script src="js/network.js"></script>
 </body>
 
 </html>

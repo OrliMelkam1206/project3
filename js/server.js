@@ -4,7 +4,15 @@ function myServer(obj){
         case 'GET':
             if(checkUrl(obj.url)){
                 if(words[2] === 'users'){
-                    return getUsers();
+                    if(words.length === 4){
+                        let id = parseInt(words[3]);
+                        if(id < addIdToUser()){
+                            return getUserById(id)
+                        }
+                    }
+                    else{
+                        return getUsers();
+                    }
                 }
                 else{
                     return getContacts();

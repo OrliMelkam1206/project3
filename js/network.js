@@ -1,6 +1,3 @@
 function network(obj){
-
-if(obj.url==="server")
-    retur
-
+    return myServer(obj);
 }
