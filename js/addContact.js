@@ -6,6 +6,6 @@ function addNewContact(event){
     let newName = document.getElementById("name").value
     let newPhone = document.getElementById("phone").value
     let newAddress = document.getElementById("address").value
-    postContact({name: newName, phone: newPhone, address: newAddress}, username.username)
+    postContact({name: newName, phone: newPhone, address: newAddress}, username.id)
     moveToContacts();
 }

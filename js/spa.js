@@ -20,12 +20,7 @@ function moveToContacts(){
     container.appendChild(contactContent);
 }
 
-// function moveToSpecificContact(){
-//     document.getElementById("container").innerHTML = "";
-//     var contactContent = document.getElementsByTagName("template")[3].content.cloneNode(true);
-//     var container = document.getElementById("container");
-//     container.appendChild(contactContent);
-// }
+
 
 function moveToAddContact(){
     document.getElementById("container").innerHTML = "";
