@@ -41,7 +41,7 @@ function myServer(obj){
             }
         case 'PUT':
             if(obj.url === 'tamarOrli/api/currentUser'){
-                return setCurrentUser(obj);
+                return setCurrentUser(obj.data);
             }
             else{
                 return 404;

@@ -14,19 +14,20 @@ function onSubmit(event){
             })
         
             if(currentUser){
+                let xhttp= new FAJAX();
+                xhttp.open('PUT', 'tamarOrli/api/currentUser');
+                xhttp.onload = function(){
+                if(xhttp.status===404)
+                    alert('eror')
+                else(alert("hello, "+currentUser.username))
+            }
+            xhttp.send(currentUser);
                 moveToContacts()
             }
             else{
                 alert("Invalid username or password");
             } 
-            let xhttp= new FAJAX();
-            xhttp.open('PUT', 'tamarOrli/api/currentUser');
-            x.onload = function(){
-                if(x.status===404)
-                    alert('eror')
-                else(alert("hello, "+currentUser.username))
-            }
-            x.send(currentUser);
+            
         }
         else{
             alert("eror 404")

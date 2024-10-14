@@ -3,11 +3,11 @@ function showContacts(){
     let xhttp= new FAJAX();
     xhttp.open('GET', 'tamarOrli/api/currentUser');
     xhttp.onload = function(){
-        alert("orli")
-       if(x.status===200){
-        document.getElementsByClassName("userName")[0].textContent += xhttp.responseText.username;
+      
+       if(xhttp.status===200){
+        // document.getElementsByClassName("userName")[0].textContent += xhttp.responseText.username;
         let main2 = document.getElementById("main");
-        let contacts = xhhtp.responseText.arrayContact;
+        let contacts = xhttp.responseText.arrayContact;
         for(let i = 0; i < contacts.length; i++){
             let contact = document.createElement("div");
             contact.style.width = "100%";
