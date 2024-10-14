@@ -8,7 +8,7 @@
 #nameApp{
     font-weight: bold;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color:  #ce4987  ;
+    color:  lightblue ;
     font-style: italic;
     font-size: 100px;
     text-align: center;
@@ -28,7 +28,7 @@
 
 
 .contacts-header{
-    background-color: #c9377b;
+    background-color:lightblue;
     padding: 100px;
     width: 100%;
     height:100px;
