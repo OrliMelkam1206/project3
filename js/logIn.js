@@ -20,7 +20,15 @@ function onSubmit(event){
             alert("Invalid username or password");
         } 
         setCurrentUser(currentUser) 
+        let xhttp= new FAJAX();
+        xhttp.open('PUT', 'tamarOrli/api/currentUser');
+        x.onload = function(){
+            if(x.status===404)
+                alert('eror')
+            else(alert("hello, "+currentUser.username))
         }
+        x.send(currentUser);
+    }
         else{
             alert("eror 404")
         }
