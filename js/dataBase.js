@@ -40,7 +40,6 @@ let users = JSON.parse(localStorage.getItem("users"))
               }
          }
      }
-  
       userDataObj.id = addIdToUser();
       if (users === null) 
         {
@@ -71,18 +70,16 @@ function postContact(contactDataObj,id){
           setCurrentUser(users[i])
           localStorage.setItem("users", JSON.stringify(users))
 
-          break
+          return 200;
         }
         else { 
           for(let j=0; j<users[i].arrayContact.length;j++){
             if(users[i].arrayContact[j].phone===contactDataObj.phone)
             {
-              counter++
-              break
+              return 350;
             }
             
           }
-          if(counter===0){
             contactDataObj.id = addIdToContact();
             users[i].arrayContact.push(contactDataObj);
             setCurrentUser(users[i])
@@ -96,11 +93,7 @@ function postContact(contactDataObj,id){
             localStorage.setItem("contacts", JSON.stringify([...contacts, contactDataObj]))
             }
           
-            break
-          } 
-          else{
-            alert("המספר טלפון הזה שמור כבר באנשי הקשר שלך!")
-            break
+            return 200;
           }
         }
         

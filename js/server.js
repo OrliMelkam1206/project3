@@ -14,8 +14,11 @@ function myServer(obj){
                         return getUsers();
                     }
                 }
-                else{
+                else if(words[2] === 'contacts'){
                     return getContacts();
+                }
+                else{
+                    return getCurrentUser();
                 }
             }
             else{
@@ -26,9 +29,19 @@ function myServer(obj){
                 if(words[2] === 'users'){
                     return postUsers(obj.data);
                 }
-                else{
-                    return postContact(obj.data);
+                else if(words[2] === 'contacts'){
+                    return postContact(obj.data[0], obj.data[1]);
                 }
+                else{
+                    return 404;
+                }
+            }
+            else{
+                return 404;
+            }
+        case 'PUT':
+            if(obj.url === 'tamarOrli/api/currentUser'){
+                return setCurrentUser(obj);
             }
             else{
                 return 404;
@@ -44,6 +57,8 @@ function checkUrl(url){
                 case 'users':
                     return true;
                 case 'contacts':
+                    return true;
+                case 'currentUser':
                     return true;
                 default:
                     return false;

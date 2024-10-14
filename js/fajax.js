@@ -19,6 +19,9 @@ class FAJAX {
         else{
             this.status = 200;
         }
+        if(this.responseText === null){
+            this.status = 404;
+        }
         setTimeout(this.onload(), 1000)
     }
     
