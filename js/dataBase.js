@@ -99,7 +99,7 @@ function postContact(contactDataObj,id){
             users[i].arrayContact.push(contactDataObj);
             setCurrentUser(users[i])
             localStorage.setItem("users", JSON.stringify(users))
-            if (contacts.length===0) {
+            if (contacts===null) {
               
               localStorage.setItem("contacts", JSON.stringify([contactDataObj]))
             }
@@ -141,7 +141,7 @@ function postContact(contactDataObj,id){
     }
     function addIdToContact(){
       let contacts = getContacts();
-      if(users !== null){
+      if(contacts !== null){
         return (contacts[contacts.length-1].id + 1);
       }
       else{
