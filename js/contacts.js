@@ -29,8 +29,11 @@ function showContacts(){
             let address = document.createElement("div");
             address.textContent = contacts[i].address;
             address.style.fontSize = "20px";
-    
-    
+            
+            let deleteContact = document.createElement("button");
+            deleteContact.textContent ="DELETE";
+            address.style.fontSize = "20px";
+            deleteContact.addEventListener("click",deleteButton(contacts[i], xhttp.responseText.id))
             contact.appendChild(name);
             contact.appendChild(phone);
             contact.appendChild(address);
@@ -46,5 +49,18 @@ xhttp.send();
 
 
 }
-
+function deleteButton(contact, id){
+    let xhttp= new FAJAX();
+    xhttp.open('DELETE', 'tamarOrli/api/contacts');
+    xhttp.onload = function(){
+        if(xhttp.status===200){
+            alert("המחיקה בוצעה בהצלחה")
+            showContacts()
+        }
+        if(xhttp.status===404){
+            alert("EROR")
+        }
+    }
+    xhttp.send([contact.id, id]);
+}
 
