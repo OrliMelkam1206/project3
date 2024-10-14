@@ -46,12 +46,18 @@ function myServer(obj){
             else{
                 return 404;
             }
+        case 'DELETE':
+            if(checkUrl(obj.url)){
+                if(words[2] === 'contacts' && typeof (words[3] * 1) === 'number'){
+                    return deleteContact(obj.data[0], obj.data[1]);
+                }
+            }
     }
 }
 
 function checkUrl(url){
     let words = url.split('/').filter(word => word);
-    if(words.length > 2 && words.length < 6){
+    if(words.length > 2 && words.length < 5){
         if(words[0] === 'tamarOrli' && words[1] === 'api'){
             switch(words[2]){
                 case 'users':
