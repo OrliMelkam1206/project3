@@ -7,5 +7,5 @@ function onRegister(event) {
     let arrayContact=[];
     let userDataObj = { username, password , phone, email, arrayContact }
     
-    postUsers(userDataObj)
+   postUsers(userDataObj)
 }

@@ -4,12 +4,10 @@ function myServer(obj){
         case 'GET':
             if(checkUrl(obj.url)){
                 if(words[2] === 'users'){
-                    getUsers();
-                    return 200;
+                    return getUsers();
                 }
                 else{
-                    getContacts();
-                    return 200;
+                    return getContacts();
                 }
             }
             else{
