@@ -51,10 +51,12 @@ let exist=true;
      {
       if (users === null) 
         {
+          
           localStorage.setItem("users", JSON.stringify([userDataObj]))
         }
       else 
         {
+          
          localStorage.setItem("users", JSON.stringify([...users, userDataObj]))
         }
        moveToContacts()
@@ -78,6 +80,7 @@ function postContact(contactDataObj,name){
         if(users[i].arrayContact.length === 0){
           users[i].arrayContact.push(contactDataObj)
           setCurrentUser(users[i])
+          debugger
           localStorage.setItem("users", JSON.stringify(users))
 
           break
@@ -94,27 +97,32 @@ function postContact(contactDataObj,name){
           if(counter===0){
             users[i].arrayContact.push(contactDataObj);
             setCurrentUser(users[i])
-            if (!contacts) {
+            localStorage.setItem("users", JSON.stringify(users))
+            if (contacts.length===0) {
+              
               localStorage.setItem("contacts", JSON.stringify([contactDataObj]))
             }
             else {
+              
             localStorage.setItem("contacts", JSON.stringify([...contacts, contactDataObj]))
             }
+          
             break
-
           } 
           else{
             alert("המספר טלפון הזה שמור כבר באנשי הקשר שלך!")
-            break;
+            break
           }
         }
-        localStorage.setItem("users", JSON.stringify(users))
+        
+        
 
     }
  
 }
 }
     function setCurrentUser(currentUser){
+  
       localStorage.setItem("currentUser", JSON.stringify(currentUser))
     }
     function getCurrentUser(){
