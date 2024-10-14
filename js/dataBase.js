@@ -102,13 +102,13 @@ function postContact(contactDataObj,id){
     }
  
 }
-}
+
     function setCurrentUser(currentUser){
   
       localStorage.setItem("currentUser", JSON.stringify(currentUser))
     }
     function getCurrentUser(){
-     return JSON.parse(localStorage.getItem("contacts"))
+     return JSON.parse(localStorage.getItem("currentUser"))
     }
 
     function addIdToUser(){

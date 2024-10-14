@@ -37,13 +37,12 @@ function showContacts(){
             contact.style.marginTop = "10px"
             main2.appendChild(contact);
         }
-    }  
-    else{
-        alert("EROR")
+        }  
+        else{
+            alert("EROR")
+        }
     }
-    xhttp.send();
-
-}
+xhttp.send();
 
 
 }

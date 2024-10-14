@@ -18,6 +18,7 @@ function moveToContacts(){
     var contactContent = document.getElementsByTagName("template")[2].content.cloneNode(true);
     var container = document.getElementById("container");
     container.appendChild(contactContent);
+    showContacts();
 }
 
 
