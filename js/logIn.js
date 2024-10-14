@@ -1,5 +1,5 @@
 function onSubmit(event){
-    console.log("hi")
+    console.log(myServer({method: 'GET', url: 'tamarOrli/api/users'}))
     event.preventDefault();
     let name=document.getElementById("username").value;   
     let password=document.getElementById("password").value;
