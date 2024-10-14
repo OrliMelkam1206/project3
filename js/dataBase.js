@@ -1,10 +1,10 @@
 function  getUserById(id){
 //פעולה שמחזירה אובייקט לפי ID
-        let array=JSON.parse(localStorage.getItem("users"));
-        for(let i=0; i<array.length; i++){
-            if(array[i].id===id)
-              return array[i];
-        }
+      let array=JSON.parse(localStorage.getItem("users"));
+      for(let i=0; i<array.length; i++){
+          if(array[i].id===id)
+          return array[i];
+      }
    }
 function  getContactById(id){
 //פעולה שמחזירה מערך של אנשי קשר לפי ID
