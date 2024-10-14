@@ -49,7 +49,7 @@ function myServer(obj){
         case 'DELETE':
             if(checkUrl(obj.url)){
                 if(words[2] === 'contacts' && typeof (words[3] * 1) === 'number'){
-                    return deleteContact(obj.data[0], obj.data[1]);
+                    return deleteContantById(obj.data[0], obj.data[1]);
                 }
             }
     }
