@@ -22,7 +22,7 @@
         <div id="loginPage">
 
             <header>
-                <h1> Games by Tamar and Orli</h1>
+                <h1> Contacts by Tamar and Orli</h1>
             </header>
             <div>
                 <form>
@@ -51,7 +51,7 @@
     <template>
         <div id="signupPage">
             <header>
-                <h1> Games by Tamar and Orli</h1>
+                <h1> Contacts by Tamar and Orli</h1>
 
             </header>
             <div>
@@ -88,7 +88,7 @@
         <div id="contact">
         <header class="contacts-header">
             <div class="countiner1">
-                <div><input type="submit" value="להתנתקות" id="logoutBottem" onclick="logOut()"></div>
+                <div style="align-content: center;"><input type="submit" value="להתנתקות" id="logoutBottem" onclick="logOut()"></div>
 
                 <h1 id="nameApp"> contacts </br> </h1>
                 <a onclick="moveToAddContact()" href="#">
@@ -111,7 +111,7 @@
     <template>
         <header class="contacts-header">
             <div class="countiner1">
-                <div><input type="submit" value="להתנתקות" id="logoutBottem" onclick="logOut()"></div>
+                <div style="align-content: center;"><input type="submit" value="להתנתקות" id="logoutBottem" onclick="logOut()"></div>
                 <h1 id="nameApp" onclick="moveToContacts()"> contacts </br> </h1>
                 <a onclick="moveToAddContact()" href="#">
                     <img id="addContact" src="./img/plus.png" alt="logo">
@@ -119,18 +119,19 @@
             </div>
         </header>
         <main>
+            <div id="form-div">
             <form>
                 <h1>New contact</h1>
-                <div>
-                    <label id="name-label" for="name">name</label>
+                <div class="add-form">
+                    <label id="name-label" for="name">name:</label><br>
                     <input type="text" id="name" placeholder="name" required>
                 </div>
-                <div>
-                    <label id="phone-label" for="phone">phone</label>
+                <div class="add-form">
+                    <label id="phone-label" for="phone">phone:</label><br>
                     <input type="tel" id="phone" placeholder="Phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required>
                 </div>
-                <div>
-                    <label id="address-label" for="address">address:</label>
+                <div class="add-form">
+                    <label id="address-label" for="address">address:</label><br>
                     <input type="text" id="address" name="address">
 
                 </div>
@@ -138,6 +139,7 @@
                     <button id="submit" onclick="addNewContact(event)">submit</button>
                 </div>
             </form>
+        </div>
         </main>
     </template>
     <script src='./js/dataBase.js'></script>

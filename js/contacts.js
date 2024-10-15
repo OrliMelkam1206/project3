@@ -34,6 +34,8 @@ function showContacts(){
             let deleteContact = document.createElement("button");
             deleteContact.textContent ="DELETE";
             address.style.fontSize = "20px";
+            deleteContact.style.color = "red";
+            deleteContact.style.border = "2px solid red";
             deleteContact.addEventListener("click",() => deleteButton(contacts[i], xhttp.responseText.id))
             contact.appendChild(name);
             contact.appendChild(phone);

@@ -8,7 +8,7 @@
 #nameApp{
     font-weight: bold;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color:  lightblue ;
+    color:  #a1c8d4; ;
     font-style: italic;
     font-size: 100px;
     text-align: center;
@@ -61,7 +61,7 @@ body{
     width: 100px;
 }
 #logoutBottem{
-    background-color: #c9377b;
+    background-color: #a1c8d4;
     border: 0px solid black;
     color: whitesmoke;
     font-size: large;
