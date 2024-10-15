@@ -1,26 +1,26 @@
 #loginPage {
 
-    
-    background-color: rgb(103, 174, 198);;
+    height: 100%;
+    background-color: lightblue;
   
 
 header{
     width:100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding-bottom: 80px;
     position: sticky;
    
     
 }
 header h1{
-    color:white;
-    width:60%;
+    color: #a1c8d4;
+    text-shadow: 1px 1px 2px black, 0 0 25px white;
     font-size:70px;
     text-align: center;
     font-family: "Aclonica", sans-serif;
     justify-content: center;
-    padding-left: 280px;
+    padding-top:40px;
     
     }
 #logo{
@@ -64,25 +64,29 @@ div{
 
 
 #signupPage {
-background-color:  rgb(103, 174, 198);
+background-color:  lightblue;
+height: 100%;
 
 header{
     width:100%;
-        display: flex;
-        justify-content: space-between;
-        padding-bottom: 80px;
+    justify-content: center;
+   
+    padding-top:20px;
+        padding-bottom: 60px;
         position: sticky;
+        text-align: center;
        
         
     }
     header h1{
-        color:white;
-        width:60%;
+        color: #a1c8d4;
+        text-shadow: 1px 1px 2px black, 0 0 25px white;
         font-size:70px;
         text-align: center;
         font-family: "Aclonica", sans-serif;
-        justify-content: center;
-        padding-left: 280px;
+        padding-top:40px;
+ 
+       
         
         }
     #logo{
@@ -159,4 +163,7 @@ form{
 }
 .add-form input{
     font-size: 15px;
+}
+button{
+   font-size: 15px;
 }
