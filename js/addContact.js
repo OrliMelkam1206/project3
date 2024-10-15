@@ -1,6 +1,4 @@
 
-
-
 function addNewContact(event) {
     event.preventDefault()
     let newName = document.getElementById("name").value

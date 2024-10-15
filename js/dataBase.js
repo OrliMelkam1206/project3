@@ -25,12 +25,11 @@ function getContacts(){
 
 function postUsers(userDataObj){
 //פעולה שמקבלת אובייקט ומוסיפה אותו למערך המשתמשים
-let users = JSON.parse(localStorage.getItem("users"))
-   if (userDataObj.username === "" || userDataObj.password === "") {
+    let users = JSON.parse(localStorage.getItem("users"))
+    if (userDataObj.username === "" || userDataObj.password === "") {
            return 300;
     }
-    else
-     {
+    else{
       if (users != null){
         for (let i = 0; i < users.length; i++) 
         {
@@ -39,22 +38,20 @@ let users = JSON.parse(localStorage.getItem("users"))
                return 350;
               }
          }
-     }
+      }
       userDataObj.id = addIdToUser();
-      if (users === null) 
-        {
+      if (users === null) {
         
           localStorage.setItem("users", JSON.stringify([userDataObj]))
-        }
-      else 
-        {
+      }
+      else {
           
          localStorage.setItem("users", JSON.stringify([...users, userDataObj]))
-        }
-       setCurrentUser(userDataObj);
-       return 200;
       }
-  }
+      setCurrentUser(userDataObj);
+      return 200;
+    }
+}
 
 function postContact(contactDataObj,id){
     //פעולה שמקבלת איש קשר ובן אדם ומוסיפה אותו למערך אנשי הקשר ולמערך אנשי הקשר של אותו אדם
